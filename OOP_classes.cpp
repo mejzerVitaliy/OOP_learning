@@ -29,3 +29,5 @@ int main()
 
     return 0;
 }
+
+// TASK 2 - Numbers have variables and methods, therefore we must using class instead of struct for tasks like this
