@@ -1,33 +1,29 @@
 ﻿#include <iostream>
+#include <cstdint>
 
-class Numbers {
+class RGBA {
+private:
+    std::uint8_t m_red;
+    std::uint8_t m_green;
+    std::uint8_t m_blue;
+    std::uint8_t m_alpha;
+
 public:
-    int first_num;
-    int second_num;
-
-    void set(int first, int second)
-    {
-        first_num = first;
-        second_num = second;
+    RGBA(std::uint8_t red = 0, std::uint8_t green = 0, std::uint8_t blue = 0, std::uint8_t alpha = 255)
+        : m_red(red), m_green(green), m_blue(blue), m_alpha(alpha) {
     }
 
-    void print()
-    {
-        std::cout << "Numbers(" << first_num << ", " << second_num << ")\n";
+    void print() const {
+        std::cout << "r=" << static_cast<int>(m_red)
+            << " g=" << static_cast<int>(m_green)
+            << " b=" << static_cast<int>(m_blue)
+            << " a=" << static_cast<int>(m_alpha) << '\n';
     }
 };
 
-int main()
-{
-    Numbers n1;
-    n1.set(314, 341);
-    
-    Numbers n2{ 214, 442 };
-
-    n1.print();
-    n2.print();
+int main() {
+    RGBA color(245, 144, 177);
+    color.print();
 
     return 0;
 }
-
-// TASK 2 - Numbers have variables and methods, therefore we must using class instead of struct for tasks like this
