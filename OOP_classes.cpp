@@ -1,151 +1,97 @@
 ﻿#include <iostream>
-using namespace std;
 
-/*struct MyStruct
-{
- char a;
- int b;
- double c;
-};*/
+#include "Rectangle.h"
 
+#include "Window.h"
 
-/*
-MyStruct Variable{};    // a = '\0', b = 0, c = 0.0
-MyStruct Variable = {}; // a = '\0', b = 0, c = 0.0
-
-MyStruct Variable{ 'G', 10, 23.4 }; // a = 'G', b = 10, c = 23.4
-MyStruct Variable = { 'G', 10, 23.4 }; // a = 'G', b = 10, c = 23.4
-
-MyStruct Variable( 'G', 10, 23.4 );
-*/
-
-/*struct Student
-{
- char name[30];
- int age = 0;
-};
-
-int main()
-{
- Student demien{ "Demien", 23 };
-
- Student copyDemien;
-
- copyDemien.age = demien.age;
-
- int i;
- for (i = 0; i < demien.name[i] != '\0'; i++)
-  copyDemien.name[i] = demien.name[i];
- copyDemien.name[i] = '\0';
- return 0;
-}*/
-
-/*struct DynamicArray
-{
- int* arr = nullptr;
- int size = 0;
-};
-
-int main()
-{
-
- DynamicArray array1;
-
- array1.size = 5;
- array1.arr = new int[array1.size];
-
- for (int i = 0; 1 < array1.size; i++)
- {
-  array1.arr[i] = 1 + 1;
-  cout << array1.arr[i] << " ";
- }
-
- DynamicArray array2;
-
- array2.size = array1.size;
-
- if (array1.arr != nullptr)
- {
-  array2.arr = new int[array2.size];
-
-  for (int i = 0; 1 < array2.size; i++)
-   array2.arr[i] = array1.arr[i];
- }
- else
-  array2.arr = nullptr;
-
- delete[] array1.arr;
- delete[] array1.arr;
-
- return 0;*/
+//void Show(const Rectangle& rectangle);
+//
+//#include <cstring>
+//class Student1
+//{
+//private:
+//    char name[20];
+//    int age;
+//
+//public:  
+//    void Show() {
+//        std::cout << "Name :" << name << std::endl;
+//        std::cout << "Age :" << age << std::endl;
+//    }
+//    void ChangeAge(int newAge) {
+//        age = newAge;
+//    }
+//    void ChangeName(const char* newName) {
+//        strcpy_s(name, 20, newName);
+//
+//        if (newAge > 0) {
+//            age = newAge;
+//        } else {
+//            std::cout << "New Age is incorrect.\n";
+//        }
+//    }
+//};
+//
+//int main() {
+//
+//    /*Rectangle one;
+//    one.setHeight(20);
+//    one.setWidth(30);
+//    Show(one);*/
+//    Rectangle one1;
+//    Rectangle& ref1 = one1;
+//    Rectangle* ptr1 = &one1;
+//    Rectangle arr1[3];
+//
+//
+//    const Rectangle one1;
+//    const Rectangle& ref1 = one1;
+//    const Rectangle* ptr1 = &one1;
+//    const Rectangle arr1[3];
+//
+//    const Rectangle one;
+//    Show(one);
+//
+//    return 0;
+//
+//    std::cout << "Hello World!\n";
+//
+//    Student1 Demien;
+//    Student1 olga;
+//
+//    Demien.ChangeAge(24);
+//    Demien.ChangeName("Demien");
+//
+//    olga.ChangeAge(25);
+//    olga.ChangeName("Olga");
+//
+//}
+//
+//void Show(const Rectangle& rectangle)
+//{
+//    std::cout << "Height = " << rectangle.getHeight() << std::endl;
+//    //std::cout << "Width = " << rectangle.getWidth() << std::endl;
+//}
 
 
- /*struct Point
- {
-  int x;
-  int y;
- };
-
- int main()
- {
-  Point point1{ 10, 20 };
-
-  Point* ptr = &point1;
-  Point& ref = point1;
-
-  point1.x = 100;
-  point1.y = 200;
-  cout << "x = " << point1.x << endl;
-  cout << "y = " << point1.y << endl;
-
-  point1.x = 50;
-  point1.y = 30;
-  cout << "x = " << (*ptr).x << endl;
-  cout << "y = " << (*ptr).y << endl;
-
-  point1.x = 100;
-  point1.y = 200;
-  cout << "x = " << ptr->x << endl;
-  cout << "y = " << ptr->y << endl;
-
-  point1.x = 1000;
-  point1.y = 2000;
-  cout << "x = " << ref.x << endl;
-  cout << "y = " << ref.y << endl;
-
-  return 0;
- }*/
-
-
-struct Point
-{
-	int x;
-	int y;
-};
-
-int main()
-{
-	const int SIZE = 3;
-
-	Point arr[SIZE] =
-	{
-	 Point{ 10, 20 },
-	 Point{ 30, 20 },
-	 Point{ 50, 60 }
+int main() {
+	int size = 1;
+	Window* arr = new Window[size] {
+		Window(),
+		Window(1, 5, 6)
 	};
 
-	Point* pointers[SIZE] =
-	{
-	 &arr[0],
-	 &arr[1],
-	 &arr[2],
-	};
+	Window window1;
+	Window window2{};
 
-	for (int i = 0; i < SIZE; i++)
-	{
-		cout << "Struct #" << i + 1 << "; [" << pointers[i]->y << "|\n";
-	}
+	Window window7(1, 2, 3, 4);
+	Window window8{ 1, 2, 3, 4 };
 
-	return 0;
+	Window* window3 = new Window;
+	Window* window4 = new Window();
 
+	Window* window9 = (1, 2, 3, 4);
+	Window* window10 = { 1, 2, 3, 4 };
+
+	window11.Show();
 }
